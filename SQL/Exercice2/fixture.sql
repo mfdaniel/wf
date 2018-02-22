@@ -1,11 +1,11 @@
 CREATE TABLE IF NOT EXISTS ORDERS
 (
-	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY, 
-	amount FLOAT NOT NULL, 
-	advanced_amount FLOAT NOT NULL, 
-	order_date DATE NOT NULL, 
-	customer_code VARCHAR(6) NOT NULL REFERENCES CUSTOMER, 
-	agent_code CHAR(6) NOT NULL REFERENCES AGENTS, 
+	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	amount FLOAT NOT NULL,
+	advanced_amount FLOAT NOT NULL,
+	order_date DATE NOT NULL,
+	customer_code VARCHAR(6) NOT NULL REFERENCES CUSTOMER,
+	agent_code CHAR(6) NOT NULL REFERENCES AGENTS,
 	description VARCHAR(60) NOT NULL
 );
 
@@ -13,7 +13,7 @@ INSERT INTO ORDERS(amount, advanced_amount, order_date, customer_code, agent_cod
 	VALUES('1000.00', '600.00', '2008-01-08', 'C00013', 'A003', 'SOD')
 	, ('3000.00', '500.00', '2008-04-15', 'C00019', 'A010', 'SOD')
 	, ('4500.00', '900.00', '2008-08-30', 'C00007', 'A010', 'SOD')
-	, ('2000.00', '400.00', '2008-05-30', 'C00016', 'A007', 'SOD') 
+	, ('2000.00', '400.00', '2008-05-30', 'C00016', 'A007', 'SOD')
 	, ('4000.00', '600.00', '2008-06-10', 'C00022', 'A002', 'SOD')
 	, ('2000.00', '300.00', '2008-05-25', 'C00012', 'A012', 'SOD')
 	, ('3500.00', '2000.00', '2008-08-15', 'C00002', 'A008', 'SOD')
@@ -36,7 +36,7 @@ INSERT INTO ORDERS(amount, advanced_amount, order_date, customer_code, agent_cod
 	, ('500.00', '100.00', '2008-09-16', 'C00022', 'A002', 'SOD')
 	, ('500.00', '100.00', '2008-07-20', 'C00009', 'A002', 'SOD')
 	, ('500.00', '100.00', '2008-07-13', 'C00010', 'A009', 'SOD')
-	, ('500.00', '100.00', '2008-06-20', 'C00017', 'A007', 'SOD') 
+	, ('500.00', '100.00', '2008-06-20', 'C00017', 'A007', 'SOD')
 	, ('500.00', '100.00', '2008-06-24', 'C00022', 'A002', 'SOD')
 	, ('2500.00', '500.00', '2008-07-20', 'C00024', 'A006', 'SOD')
 	, ('2500.00', '400.00', '2008-07-20', 'C00015', 'A003', 'SOD')
