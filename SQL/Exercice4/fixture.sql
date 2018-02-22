@@ -5,7 +5,7 @@ CREATE TABLE Person (
   date_of_birth date, 
   PRIMARY KEY (id), 
   UNIQUE INDEX (id)
-) type=InnoDB;
+) engine=InnoDB;
 
 CREATE TABLE Address (
   id              int(10) NOT NULL AUTO_INCREMENT, 
@@ -15,7 +15,16 @@ CREATE TABLE Address (
   Townid          int(10) NOT NULL, 
   PRIMARY KEY (id), 
   UNIQUE INDEX (id)
-) type=InnoDB;
+) engine=InnoDB;
+
+CREATE TABLE person_address (
+  Personid       int(10) NOT NULL, 
+  Addressid      int(10) NOT NULL, 
+  Address_typeid int(10) NOT NULL, 
+  PRIMARY KEY (Personid, 
+  Addressid, 
+  Address_typeid)
+) engine=InnoDB;
 
 CREATE TABLE Country (
   id   int(10) NOT NULL AUTO_INCREMENT, 
@@ -24,7 +33,7 @@ CREATE TABLE Country (
     PRIMARY KEY (id), 
   UNIQUE INDEX (id), 
   UNIQUE INDEX (name)
-) type=InnoDB;
+) engine=InnoDB;
 
 CREATE TABLE Address_type (
   id    int(10) NOT NULL AUTO_INCREMENT, 
@@ -32,7 +41,7 @@ CREATE TABLE Address_type (
   PRIMARY KEY (id), 
   UNIQUE INDEX (id), 
   UNIQUE INDEX (label)
-) type=InnoDB;
+) engine=InnoDB;
 
 CREATE TABLE Town (
   id          int(10) NOT NULL AUTO_INCREMENT, 
@@ -43,4 +52,4 @@ CREATE TABLE Town (
   UNIQUE INDEX (id), 
   UNIQUE INDEX (name), 
   UNIQUE INDEX (postal_code)
-) type=InnoDB;
+) engine=InnoDB;
